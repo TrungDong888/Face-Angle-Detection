@@ -16,20 +16,11 @@ using namespace cv;
 
 int main()
 {
-	/*********************
-    std::vector<ImageLabel> mImageLabels;
-    if(!load_ImageLabels("mImageLabels-test.bin", mImageLabels)){
-        mImageLabels.clear();
-        ReadLabelsFromFile(mImageLabels, "labels_ibug_300W_test.xml");
-        save_ImageLabels(mImageLabels, "mImageLabels-test.bin");
-    }
-    std::cout << "测试数据一共有: " <<  mImageLabels.size() << std::endl;
-	*******************/
 
     ldmarkmodel modelt;
     std::string modelFilePath = "roboman-landmark-model.bin";
     while(!load_ldmarkmodel(modelFilePath, modelt)){
-        std::cout << "文件打开错误，请重新输入文件路径." << std::endl;
+        std::cout << "Errors." << std::endl;
         std::cin >> modelFilePath;
     }
 
